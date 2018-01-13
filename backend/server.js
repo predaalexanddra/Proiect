@@ -1,5 +1,6 @@
 var express = require("express")
 var Sequelize = require("sequelize")
+const bodyParser = require('body-parser')
 
 var sequelize = new Sequelize('playlist','root','',{
     dialect:'mysql',
@@ -11,9 +12,18 @@ var sequelize = new Sequelize('playlist','root','',{
 })
 
 var app = express()
-app.use(express.static('public'))
+app.use(express.static('./react_playlist/build'))
 app.use(express.json());
+app.use(bodyParser.json());
 app.use(express.urlencoded());
+app.use(function(req,res,next){
+    res.setHeader("Access-Control-Allow-Origin","*");
+    res.setHeader("Access-Control-Allow-Headers","Origin,X-Requested-With, Content-Type, Accept");
+    res.setHeader("Access-Control-Allow-Credentials","true");
+    res.setHeader("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT,DELETE");
+    next();
+})
+
 
 sequelize.authenticate().then(function(){
     console.log("Autentificare efectuata cu succes")

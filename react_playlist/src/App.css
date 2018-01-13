@@ -1,0 +1,49 @@
+.App {
+  text-align: center;
+  background-color: #000000;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 150px;
+}
+
+.App-header {
+  background-color: #970304;
+  height: 180px;
+  padding: 20px;
+  color: white;
+  font-style:bold;
+}
+.App-footer{
+  background-color: #970304;
+  height: 80px;
+  color:white;
+ 
+}
+.btnDelete{
+  background-color: #970304;
+  border-radius: 25px;
+  transition: 0.4s;
+  opacity: 0.6;
+  font-family:"Comic Sans MS";
+  color:	#FFFFFF
+  
+}
+.btnDelete:hover
+{
+    opacity:1;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
